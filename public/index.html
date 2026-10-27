@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Executive English Studio — Assured, never aggressive</title>
+  <meta name="description" content="A personal English coaching workspace for Korean, Japanese, and Taiwanese executives: soften messages, push back gracefully, anchor Zoom meetings, and present supply chain updates with calm authority." />
+  <meta property="og:title" content="Executive English Studio" />
+  <meta property="og:description" content="Personal English coaching for executives who want to sound assured without sounding aggressive." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" crossorigin href="/assets/index-C-hwkr5X.css">
+</head>
+<body>
+  <header class="topbar">
+    <div style="max-width:1320px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:14px">
+        <div class="mark" aria-hidden="true">E</div>
+        <div>
+          <div class="serif" style="font-size:22px;line-height:1">Executive English Studio</div>
+          <div class="eyebrow" style="margin-top:3px">Assured &middot; Considered &middot; Never aggressive</div>
+        </div>
+      </div>
+      <span id="status-pill" class="status-pill" data-state="pending" data-testid="status-ai"><i></i><span id="status-text">Checking coach engine</span></span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section style="display:flex;flex-direction:column;gap:20px;min-width:0">
+      <div class="panel">
+        <div class="tabs" role="tablist" id="tabs">
+          <button class="tab" role="tab" data-module="softening" aria-selected="true" data-testid="tab-softening"><span class="num">01</span><span class="name">Softening Translator</span></button>
+          <button class="tab" role="tab" data-module="pushback" aria-selected="false" data-testid="tab-pushback"><span class="num">02</span><span class="name">Pushback Engine</span></button>
+          <button class="tab" role="tab" data-module="zoom" aria-selected="false" data-testid="tab-zoom"><span class="num">03</span><span class="name">Zoom Anchor</span></button>
+          <button class="tab" role="tab" data-module="supply-chain" aria-selected="false" data-testid="tab-supply-chain"><span class="num">04</span><span class="name">Supply Chain Presenter</span></button>
+        </div>
+
+        <div style="padding:18px;display:grid;gap:16px">
+          <div>
+            <div class="eyebrow" id="mod-eyebrow">Module 01</div>
+            <p id="mod-purpose" class="serif" style="font-size:24px;line-height:1.25;margin:4px 0 4px"></p>
+            <p id="mod-instructions" style="margin:0;color:hsl(var(--ink-soft));font-size:13px"></p>
+          </div>
+
+          <aside class="coach-note" aria-labelledby="teacher-wayne-note-title" data-testid="teacher-wayne-note">
+            <div class="eyebrow" id="teacher-wayne-note-title" style="margin-bottom:8px">A note from Teacher Wayne</div>
+            <p style="margin:0 0 10px">We’ve put together 10 common corporate expressions and scenarios for this module, situations you’re likely to encounter in your global business interactions. Click any example below to see how the system refines it.</p>
+            <p style="margin:0 0 10px">You can also make this space your own. Type in a scenario, an email draft, or a presentation update you’re working on today.</p>
+            <p style="margin:0 0 10px">Once you receive your alternatives, use the follow-up chat below the results to refine the phrasing, adjust the tone, or explore pronunciation and cultural tips. The goal is to help you communicate clearly and confidently while keeping your own voice.</p>
+            <span class="sig">Teacher Wayne</span>
+          </aside>
+
+          <form id="gen-form" style="display:grid;gap:12px">
+            <div>
+              <div class="eyebrow" style="margin-bottom:6px">Choose one of 10 scenarios</div>
+              <div id="examples" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+                <label for="input-text" class="label" style="margin:0" id="input-label">Your draft</label>
+                <span class="mono" style="font-size:11px;color:hsl(var(--ink-soft))"><span id="char-count">0</span> / 6000</span>
+              </div>
+              <textarea id="input-text" class="field" rows="7" maxlength="6000" data-testid="input-text"></textarea>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:4px;border-top:1px solid hsl(var(--line))">
+              <div style="display:flex;align-items:center;gap:10px;padding-top:10px">
+                <span class="eyebrow">Tone</span>
+                <div class="seg" id="tone-seg">
+                  <button type="button" data-tone="warm" aria-pressed="false" data-testid="button-tone-warm">Warm</button>
+                  <button type="button" data-tone="balanced" aria-pressed="true" data-testid="button-tone-balanced">Balanced</button>
+                  <button type="button" data-tone="direct" aria-pressed="false" data-testid="button-tone-direct">Direct</button>
+                </div>
+              </div>
+              <button type="submit" id="gen-btn" class="btn btn-seal" style="margin-top:10px" data-testid="button-generate">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                <span id="gen-btn-label">Refine with coach</span>
+              </button>
+            </div>
+            <p style="margin:0;font-size:11.5px;color:hsl(var(--ink-soft));display:flex;gap:6px;align-items:flex-start">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="flex:none;margin-top:2px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Text you submit is sent to an AI model to generate coaching. Do not include confidential business data, customer names, pricing, or personal information.
+            </p>
+            <div id="gen-error" class="alert hidden" role="alert" data-testid="text-generate-error"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panel" id="output-panel">
+        <div class="panel-h">
+          <div style="display:flex;align-items:center;gap:10px">
+            <span class="seal-dot"></span>
+            <span class="serif" style="font-size:20px">Coached version</span>
+            <span id="output-tag" class="tag-example" data-testid="status-output-kind">Illustrative example</span>
+          </div>
+          <button id="copy-btn" class="btn btn-ghost" type="button" data-testid="button-copy-output">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span id="copy-label">Copy</span>
+          </button>
+        </div>
+        <div style="padding:18px;display:grid;gap:14px">
+          <p id="example-note" style="margin:0;font-size:12px;color:hsl(38 60% 32%)">Hand-written sample to show the shape of a coached reply. Not generated by AI. Submit your own draft above for a real result.</p>
+          <div id="output-skeleton" class="hidden" style="display:grid;gap:9px;padding:18px 20px">
+            <div class="skeleton" style="width:92%"></div><div class="skeleton" style="width:78%"></div><div class="skeleton" style="width:85%"></div><div class="skeleton" style="width:40%"></div>
+          </div>
+          <div id="output-doc" class="output-doc example" data-testid="text-output"></div>
+          <div class="coach-note" id="coach-note-box">
+            <div class="eyebrow" style="margin-bottom:6px">AI coaching feedback</div>
+            <div class="body" id="coach-note" data-testid="text-coach-note"></div>
+            <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:end">
+              <span class="mono" style="font-size:10.5px;color:hsl(var(--ink-soft))">Coaching guidance, not a personal reply from Teacher Wayne</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-h">
+          <div>
+            <div class="serif" style="font-size:20px">Follow-up with your coach</div>
+            <div style="font-size:12px;color:hsl(var(--ink-soft))">Ask why a phrase works, request a shorter version, or rehearse a reply.</div>
+          </div>
+          <button id="chat-clear" type="button" class="btn btn-ghost" style="padding:6px 10px;font-size:12px" data-testid="button-clear-chat">Clear</button>
+        </div>
+        <div style="padding:16px 18px;display:grid;gap:12px">
+          <div id="chat-empty" style="font-size:13px;color:hsl(var(--ink-soft));padding:14px;border:1px dashed hsl(var(--line));border-radius:4px;text-align:center">
+            Generate a coached version first. Follow-up questions are anchored to that output.
+          </div>
+          <div id="chat-log" class="chat-log hidden" data-testid="list-chat"></div>
+          <form id="chat-form" style="display:flex;gap:8px">
+            <input id="chat-input" class="field" maxlength="2000" placeholder="e.g. Can you make the second sentence less formal?" data-testid="input-chat" />
+            <button id="chat-btn" class="btn btn-primary" type="submit" data-testid="button-send-chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+              <span id="chat-btn-label">Ask</span>
+            </button>
+          </form>
+          <div id="chat-error" class="alert hidden" role="alert" data-testid="text-chat-error"></div>
+        </div>
+      </div>
+
+      <a id="return-link" class="return-link" href="korea.html" data-testid="link-return-country">
+        <span>
+          <span class="eyebrow" style="color:hsl(var(--paper) / .6)">Return to your programme</span>
+          <span id="return-label" class="serif" style="display:block;font-size:20px">Korea executive programme</span>
+        </span>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+      </a>
+    </section>
+
+    <aside>
+      <div class="side-sticky" style="display:grid;gap:16px">
+        <div class="panel">
+          <div class="panel-h"><span class="eyebrow">Your market</span></div>
+          <div style="padding:14px 16px">
+            <div class="country" id="country-seg">
+              <button type="button" data-country="korea" aria-pressed="true" data-testid="button-country-korea"><span class="k">Korea</span><span class="s">KR</span></button>
+              <button type="button" data-country="japan" aria-pressed="false" data-testid="button-country-japan"><span class="k">Japan</span><span class="s">JP</span></button>
+              <button type="button" data-country="taiwan" aria-pressed="false" data-testid="button-country-taiwan"><span class="k">Taiwan</span><span class="s">TW</span></button>
+            </div>
+            <p style="margin:10px 0 0;font-size:12px;color:hsl(var(--ink-soft))">Coaching adapts to the communication habits most common in your market.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-h">
+            <div>
+              <div class="serif" style="font-size:20px">Work with a coach</div>
+              <div style="font-size:12px;color:hsl(var(--ink-soft))">Leave your details for a personal coaching conversation.</div>
+            </div>
+          </div>
+          <form id="lead-form" style="padding:14px 16px;display:grid;gap:10px" novalidate>
+            <div><label class="label" for="lead-name">Name</label><input id="lead-name" class="field" required maxlength="120" autocomplete="name" data-testid="input-lead-name" /></div>
+            <div><label class="label" for="lead-email">Email</label><input id="lead-email" type="email" class="field" required maxlength="200" autocomplete="email" data-testid="input-lead-email" /></div>
+            <div><label class="label" for="lead-phone">Phone</label><input id="lead-phone" type="tel" class="field" maxlength="40" autocomplete="tel" data-testid="input-lead-phone" /></div>
+            <div><label class="label" for="lead-line">Line / Kakao ID</label><input id="lead-line" class="field" maxlength="80" data-testid="input-lead-line" /></div>
+            <div>
+              <label class="label" for="lead-country">Country</label>
+              <select id="lead-country" class="field" data-testid="select-lead-country">
+                <option value="korea">Korea</option><option value="japan">Japan</option><option value="taiwan">Taiwan</option>
+              </select>
+            </div>
+            <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:hsl(var(--ink-soft));cursor:pointer">
+              <input id="lead-consent" type="checkbox" style="margin-top:3px;accent-color:hsl(var(--seal))" data-testid="checkbox-lead-consent" />
+              <span>I agree that my details are stored so a coach can contact me about coaching.</span>
+            </label>
+            <button id="lead-btn" type="submit" class="btn btn-primary" data-testid="button-submit-lead"><span id="lead-btn-label">Request coaching contact</span></button>
+            <div id="lead-error" class="alert hidden" role="alert" data-testid="text-lead-error"></div>
+            <div id="lead-ok" class="ok hidden" role="status" data-testid="text-lead-success"></div>
+          </form>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer style="max-width:1320px;margin:0 auto;padding:4px 20px 28px;font-size:11.5px;color:hsl(var(--ink-soft))" class="mono">
+    Executive English Studio &middot; Coaching for Korea, Japan and Taiwan
+  </footer>
+
+  <script src="/templates.js" defer></script>
+  <script src="/studio.js" defer></script>
+</body>
+</html>

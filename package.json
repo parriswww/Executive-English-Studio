@@ -1,0 +1,23 @@
+{
+  "name": "executive-english-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Teacher Wayne's Executive English Studio",
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "packageManager": "pnpm@10.26.1",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env scripts/start.mjs",
+    "dev": "node --env-file-if-exists=.env scripts/start.mjs",
+    "check": "node --check server.js && node --check public/studio.js && node --check public/templates.js && node --check public/country-studio.js",
+    "test": "node scripts/verify-package.mjs"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "@google/genai": "^2.31.0",
+    "pg": "^8.23.1",
+    "zod": "3.25.76"
+  }
+}
